@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Will Rogers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, user-scalable=no">
+  <!-- Black colour theme on Android. -->
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico?">
+  <link type="text/css" rel="stylesheet" href="/public/style.css" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@wrgrs" />
+  <meta name="twitter:title" content="Will Rogers" />
+  {% if page.title %}
+  <meta name="twitter:description" content="{{ page.title }}" />
+  {% else %}
+  <meta name="twitter:description" content="A personal site" />
+  {% endif %}
+  {% if page.image %}
+  <meta name="twitter:image" content="{{ page.image }}" />
+  {% else %}
+  <meta name="twitter:image" content="{{ base.url }}/favicon-96x96.png" />
+  {% endif %}
+  {% for css_name in extra_css %}
+  <link type="text/css" rel="stylesheet" href="{{ css_name }}" />
+  {% endfor %}
+  <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee%7CRaleway%7CPoppins%7CQuicksand:wght@500"
+    rel="stylesheet">
+  {% for js_name in extra_js %}
+  <script type="text/javascript" src="{{ js_name }}"></script>
+  {% endfor %}
+</head>
+
+<body id=background>
+  <div id="wrapper">
+    <div id="header">
+      <div id="menu">
+        <div id="logo">
+          <div id="monkey">
+            <img src="/static/monkey.png" alt="monkey">
+          </div>
+          <a id=name-logo href="/index.html">Will Rogers</a>
+        </div>
+        <label id="toggle-label"></label>
+        <input type="checkbox" id="toggle-menu" name="toggle-label" checked>
+        <nav>
+          <div id="menu-header">
+            <a href="/index.html">WR</a>
+            <img id="sidebar-monkey" src="/static/monkey.png" alt="monkey">
+          </div>
+          <ul class="nav-items">
+            <li class="header-nav-item"><a href="/index">Blog</a></li>
+            <li class="header-nav-item"><a href="/about">About</a></li>
+            <li class="header-nav-item"><a href="/links">Links</a></li>
+            <li class="header-nav-item"><a href="/xwds">Crosswords</a></li>
+            <li class="header-nav-item">
+              <a href="https://github.com/willrogers">
+                <img class="header-nav-github" src="/static/GitHub-Mark-64px.png" alt="github">
+                </img>
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <a href="https://twitter.com/wrgrs">
+                <img class="header-nav-twitter" src="/static/Twitter_Logo_Blue.png" alt="github">
+                </img>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="main">
+      <div id="content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+  <script src="/js/menu.js">
+  </script>
+</body>
+
+</html>

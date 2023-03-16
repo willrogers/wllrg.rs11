@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Will Rogers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, user-scalable=no">
+  <!-- Black colour theme on Android. -->
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico?">
+  <link type="text/css" rel="stylesheet" href="/public/style.css" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@wrgrs" />
+  <meta name="twitter:title" content="Will Rogers" />
+  
+  <meta name="twitter:description" content="A personal site" />
+  
+  
+  <meta name="twitter:image" content="/favicon-96x96.png" />
+  
+  
+  <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee%7CRaleway%7CPoppins%7CQuicksand:wght@500"
+    rel="stylesheet">
+  
+  <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+</head>
+
+<body id=background>
+  <div id="wrapper">
+    <div id="header">
+      <div id="menu">
+        <div id="logo">
+          <div id="monkey">
+            <img src="/static/monkey.png" alt="monkey">
+          </div>
+          <a id=name-logo href="/index.html">Will Rogers</a>
+        </div>
+        <label id="toggle-label"></label>
+        <input type="checkbox" id="toggle-menu" name="toggle-label" checked>
+        <nav>
+          <div id="menu-header">
+            <a href="/index.html">WR</a>
+            <img id="sidebar-monkey" src="/static/monkey.png" alt="monkey">
+          </div>
+          <ul class="nav-items">
+            <li class="header-nav-item"><a href="/index">Blog</a></li>
+            <li class="header-nav-item"><a href="/about">About</a></li>
+            <li class="header-nav-item"><a href="/links">Links</a></li>
+            <li class="header-nav-item"><a href="/xwds">Crosswords</a></li>
+            <li class="header-nav-item">
+              <a href="https://github.com/willrogers">
+                <img class="header-nav-github" src="/static/GitHub-Mark-64px.png" alt="github">
+                </img>
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <a href="https://twitter.com/wrgrs">
+                <img class="header-nav-twitter" src="/static/Twitter_Logo_Blue.png" alt="github">
+                </img>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="main">
+      <div id="content">
+        
+<h1 id="title">A clock for Joseph</h1>
+<div id="clock">
+  <svg id="clock-svg" viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="52" cy="52" r="50" fill="none" stroke-width="2" stroke="black" />
+  </svg>
+</div>
+<script>
+  const dimension = 104;
+  const centre = dimension / 2;
+  const distance = 40;
+  const textSize = 10;
+  // Temporarily disable second hand.
+  const drawSecondHand = false;
+  const clockSvg = document.getElementById("clock-svg");
+  function drawNumbers(clockSvg) {
+    for (let i = 0; i < 12; i++) {
+      const angle = (30 * i * Math.PI) / 180;
+      const number = i === 0 ? 12 : i;
+      const s = centre + Math.sin(angle) * distance;
+      const c = centre + -Math.cos(angle) * distance;
+      const element = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "text"
+      );
+      console.log();
+      element.setAttribute("x", s - textSize / 2);
+      element.setAttribute("y", c + textSize / 2);
+      element.setAttribute("width", textSize);
+      element.setAttribute("height", textSize);
+      element.setAttribute("class", "small");
+      element.setAttribute("textanchor", "middle");
+      element.textContent = number;
+      clockSvg.appendChild(element);
+    }
+  }
+  function drawHands(clockSvg, drawSecondHand) {
+    const now = new Date();
+    const hours = now.getHours() + now.getMinutes() / 60;
+    const minutes = now.getMinutes() + now.getSeconds() / 60;
+    const seconds = now.getSeconds();
+    const hourLength = 30;
+    const minuteLength = 40;
+    const secondLength = 45;
+
+    function drawHand(clockSvg, id, length, angle, colour, width) {
+      const old = document.getElementById(id);
+      if (old !== null) {
+        old.remove();
+      }
+      const hand = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line"
+      );
+      const endX = 52 + length * Math.sin((angle / 180) * Math.PI);
+      const endY = 52 + length * -Math.cos((angle / 180) * Math.PI);
+      hand.setAttribute("id", id);
+      hand.setAttribute("x1", "52");
+      hand.setAttribute("y1", "52");
+      hand.setAttribute("x2", endX);
+      hand.setAttribute("y2", endY);
+      hand.setAttribute("stroke", colour);
+      hand.setAttribute("stroke-width", width);
+      clockSvg.appendChild(hand);
+    }
+
+    drawHand(clockSvg, "hourhand", hourLength, hours * 30, "black", 2);
+    drawHand(clockSvg, "minutehand", minuteLength, minutes * 6, "gray", 1.5);
+    if (drawSecondHand) {
+      drawHand(clockSvg, "secondhand", secondLength, seconds * 6, "red", 1);
+    }
+    const centre = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "circle"
+    );
+    centre.setAttribute("cx", "52");
+    centre.setAttribute("cy", "52");
+    centre.setAttribute("r", "2");
+    centre.setAttribute("stroke", "black");
+    centre.setAttribute("fill", "black");
+    clockSvg.appendChild(centre);
+  }
+  drawNumbers(clockSvg);
+  drawHands(clockSvg, drawSecondHand);
+  setInterval(() => drawHands(clockSvg, drawSecondHand), 1000);
+</script>
+      </div>
+    </div>
+  </div>
+  <script src="/js/menu.js">
+  </script>
+</body>
+
+</html>

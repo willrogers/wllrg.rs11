@@ -1,0 +1,55 @@
+{
+  "across-size": 13,
+  "down-size": 13,
+  "black-squares": [
+    [0, 7],
+    [1, 1], [1, 3], [1, 5], [1, 7], [1, 9], [1, 11],
+    [2, 5],
+    [3, 1], [3, 3], [3, 5], [3, 7], [3, 9], [3, 11],
+    [4, 7],
+    [5, 1], [5, 2], [5, 3], [5, 5], [5, 6], [5, 7], [5, 8], [5, 9], [5, 11],
+    [6, 0], [6, 6], [6, 12],
+    [7, 1], [7, 3], [7, 4], [7, 5], [7, 6], [7, 7], [7, 9], [7, 10], [7, 11],
+    [8, 5],
+    [9, 1], [9, 3], [9, 5], [9, 7], [9, 9], [9, 11],
+    [10, 7],
+    [11, 1], [11, 3], [11, 5], [11, 7], [11, 9], [11, 11],
+    [12, 5]
+  ],
+  "clues": {
+    "ac": {
+      "1": ["Father, deity and leader of apostles in temple", 6, 4],
+      "4": ["I can start to take step back from cold place", 6, 20],
+      "9": ["Bestow approval on inferior bishop first", 5, 15],
+      "10": ["Just a single wake lacking energy is burdensome", 7, 19],
+      "11": ["Small animal has problem mingling outside", 7, 3],
+      "12": ["Each is European, to a substantial degree", 5, 1],
+      "13": ["Several pounds of granite perhaps?", 5, 13],
+      "15": ["Money sounds like it's straightforward", 5, 11],
+      "18": ["Sandi's crushed tablets of ibuprofen maybe", 5, 20],
+      "20": ["Deny it's up in the air - it's inevitable", 7, 23],
+      "22": ["Make one's mark in one test, right away", 7, 14],
+      "23": ["Balance politician and artist", 5, 12],
+      "24": ["Lay the groundwork for the return of something distressing to the French", 6, 17],
+      "25": ["US university returning to English city at an opportune moment", 6, 5]
+    },
+    "dn": {
+      "1": ["Rocks King maybe during disrupted sleep", 7, 21],
+      "2": ["Dull glow coming from single amethyst", 5, 7],
+      "3": ["Smashed it, speed notwithstanding", 7, 24],
+      "5": ["Go carefully, flipping last bit of pancake", 5, 6],
+      "6": ["Infectious disease discombobulating Oscar and Rachel", 7, 18],
+      "7": ["Tasty crust on Dad's snack", 5, 16],
+      "8": ["Avoid cunning plan", 5, 5],
+      "14": ["Found damaged in Cairo, an ancient instrument from the east", 7, 9],
+      "15": ["After explosion one is full of lots of little spirals", 7, 10],
+      "16": ["Yell at sweetheart, one with a very thin skin", 7, 8],
+      "17": ["A humdrum time for lady's first gentleman, perhaps", 5, 19],
+      "18": ["Energy cut after ions dispersed from disturbance", 5, 9],
+      "19": ["Bore baboon", 5, 2],
+      "21": ["I'm sad, left out, diffuse", 5, 22]
+    }
+  },
+  "correct-answer": -1560170391,
+  "message-squares": []
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Will Rogers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, user-scalable=no">
+  <!-- Black colour theme on Android. -->
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico?">
+  <link type="text/css" rel="stylesheet" href="/public/style.css" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@wrgrs" />
+  <meta name="twitter:title" content="Will Rogers" />
+  
+  <meta name="twitter:description" content="A personal site" />
+  
+  
+  <meta name="twitter:image" content="/favicon-96x96.png" />
+  
+  
+  <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee%7CRaleway%7CPoppins%7CQuicksand:wght@500"
+    rel="stylesheet">
+  
+</head>
+
+<body id=background>
+  <div id="wrapper">
+    <div id="header">
+      <div id="menu">
+        <div id="logo">
+          <div id="monkey">
+            <img src="/static/monkey.png" alt="monkey">
+          </div>
+          <a id=name-logo href="/index.html">Will Rogers</a>
+        </div>
+        <label id="toggle-label"></label>
+        <input type="checkbox" id="toggle-menu" name="toggle-label" checked>
+        <nav>
+          <div id="menu-header">
+            <a href="/index.html">WR</a>
+            <img id="sidebar-monkey" src="/static/monkey.png" alt="monkey">
+          </div>
+          <ul class="nav-items">
+            <li class="header-nav-item"><a href="/index">Blog</a></li>
+            <li class="header-nav-item"><a href="/about">About</a></li>
+            <li class="header-nav-item"><a href="/links">Links</a></li>
+            <li class="header-nav-item"><a href="/xwds">Crosswords</a></li>
+            <li class="header-nav-item">
+              <a href="https://github.com/willrogers">
+                <img class="header-nav-github" src="/static/GitHub-Mark-64px.png" alt="github">
+                </img>
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <a href="https://twitter.com/wrgrs">
+                <img class="header-nav-twitter" src="/static/Twitter_Logo_Blue.png" alt="github">
+                </img>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="main">
+      <div id="content">
+        
+<div id="post">
+  <h1>EPICS</h1>
+<p>I work in the Control Systems Group at
+<a href="https://www.diamond.ac.uk">Diamond Light Source</a>. The core of that group's
+responsibilities is the control system, used to allow people and software to
+control and monitor how the accelerators and scientific equipment behave.</p>
+<p>Central to the control system is a software toolkit, nominally the Experimental
+Physics and Industrial Control System, but universally known as
+<a href="https://epics-controls.org/">EPICS</a>. This encompasses embedded software to
+control real devices (magnets, vacuum pumps, motors), logic about how these
+should work, transmitting that information across the network and being
+able to control those devices from so-called client machines.</p>
+<p>Most of the work in the Control Systems group involves interacting with one of
+these parts of EPICS.</p>
+<h2>Client-Server Architecture and Distributed Control</h2>
+<p>Computing is full of what are known as clients and servers. A server provides
+some service: it could provide HTML to be rendered in a web browser, data from
+some database, map tiles, or basically anything else. A client uses one or more
+of these services, and the machine reading this web page is an example of one of
+these clients.</p>
+<p>EPICS is a <em>distributed control system</em>. What this means is that there are many
+servers, typically one for a discrete part of the control system, and there are
+many clients reading from these many servers.</p>
+<h2>IOCs and PVs</h2>
+<p>EPICS servers are called input/output controllers or <em>IOCs</em>, for reasons that may
+or may not make sense. Each IOC provides a number of process variables or <em>PVs</em>. A PV
+represents one value, often a physical quantity such as a temperature, voltage or
+current in a device, but just as likely some more abstract but useful value.
+EPICS allows you to read from and possibly write to this value from anywhere on
+the control system network.</p>
+<img src="/static/blog/epics.jpg" alt="epics" class="blog-img"/>
+<p class="blog-img-caption">
+A schematic view of an EPICS control system, including clients, IOCs and PVs.
+The thicker lines suggest that client 1 is connecting to PV1 and PV2, and client 2
+is connecting to PV4.
+</p>
+<p>To illustrate this, at Diamond it would be easy to go to the Control Room, log into
+one of the Control Room Linux machines and write an incorrect value to the PV
+that represents the current of one of the magnets in the accelerator. This would
+promptly change that current in the real magnet, divert the electrons from where
+they ought to be, and 'dump the beam'. Don't do this.</p>
+<h2>Datatypes</h2>
+<p>EPICS up to version 3 (later versions are described in
+<a href="/posts/2019-06-03-epics7">this somewhat more technical post</a>) uses relatively simple
+datatypes. A PV's primary value may be an integer (of different sizes), float,
+double or an array of these. These PVs may have additional metadata
+that is relevant for a control system, such as an alarm status (typically
+used to show the yellow or red LEDs that you see on the classic control
+system UIs).</p>
+<p>(There are a couple of other types available, enums and strings, that aren't
+particularly interesting at this stage).</p>
+<h2>The EPICS Client</h2>
+<p>The EPICS client is simple. All it needs to do is understand the data that needs
+to be sent and received over the network, and convert it into a format useful
+for the user or application. The main complexity is managing waiting for the
+network responses, which must be handled intelligently by the client applications.</p>
+<p>You can use this information to create the classic control system user interfaces
+with green, yellow and red LEDs that you might see in a film.</p>
+<h2>The Network Protocol</h2>
+<p>Fundamental to how EPICS works is the way that clients and servers interact over
+the network. This is described in the EPICS network protocol, which is called
+<em>Channel Access</em>. There are a number of parts to the protocol:</p>
+<ul>
+<li>finding the IOC that provides the PV you are interested in</li>
+<li>establishing a connection to the IOC</li>
+<li>requesting single values for the PV</li>
+<li>registering interest in updates from the PV</li>
+<li>setting values to the PV</li>
+<li>announcing that the IOC is available</li>
+</ul>
+<p>All of this is implemented on top of the TCP and UDP protocols that you already
+use when browsing the internet.</p>
+<p>In practice, the details of the protocol are handled by code in different
+programming languages, and it's only useful to know when you are debugging
+problems with channel access itself, which is comparatively rare.  However,
+some aspects are useful for understanding the principles of the control
+system.</p>
+<h2>IOCs</h2>
+<p>Much of the complexity in EPICS comes from code in the IOCs. This can broadly
+be separated into two parts:</p>
+<ul>
+<li>communication with the hardware itself</li>
+<li>the 'database', of a type specific to EPICS and not to be confused with
+relational databases such as Oracle</li>
+</ul>
+<p>The database is used to define the names and types of the PVs
+that are used by the higher levels of the control system. There is also a
+certain amount of logic built in to the database, so that you can define how
+different variables interact with each other. (Strictly, in the database
+you define things called 'records', but for the purposes of this post you
+can think of these as the same as PVs.)</p>
+<p>Below the database there is custom code that allows you to connect those variables
+to the real hardware that you are trying to control. This comes in many forms;
+the EPICS community has already written drivers for many types of device.</p>
+<img src="/static/blog/ioc.jpg" alt="ioc" class="blog-img" />
+<p class="blog-img-caption">A schematic view of an IOC.</p>
+<p>Once these parts are in place, if you configure your software and hardware
+correctly you can run your IOC and it is then available to be controlled over
+EPICS.</p>
+<h2>The Control System</h2>
+<p>At Diamond, each part of the control system comprises some number of IOCs
+available on the network. These IOCs may communicate with each other using
+channel access; the client software also connects with the IOCs over channel
+access.</p>
+<p>The distributed nature of EPICS means that more IOCs can be added to the control
+system without changing anything else, and they are available immediately.
+This behaviour scales very well as the control system grows, the main limitation
+being the capacity of the network on which it is running.</p>
+<p>This has one problem: if you accidentally define two PVs with the same name
+EPICS cannot distinguish them and you cannot define which one you would like
+to control. Design discipline is the best way to avoid this problem. With
+a large facility like Diamond, which has more than one million PVs, this
+discipline must be rigorous.</p>
+<p>However, if you get some basic principles right, EPICS can give you a
+control system that will scale up to the largest scientific facilities
+and work very reliably. It has served Diamond well for the past 15
+years and we expect it to continue to do so.</p>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+  <script src="/js/menu.js">
+  </script>
+</body>
+
+</html>

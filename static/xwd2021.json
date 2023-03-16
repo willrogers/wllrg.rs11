@@ -1,0 +1,51 @@
+{
+  "across-size": 13,
+  "down-size": 13,
+  "black-squares": [
+    [0, 0], [0, 2], [0, 4], [0, 6], [0, 8], [0, 10], [0, 12],
+    [1, 6],
+    [2, 0], [2, 2], [2, 4], [2, 6], [2, 8], [2, 10], [2, 12],
+    [3, 3], [3, 4],
+    [4, 0], [4, 2], [4, 4], [4, 6], [4, 7], [4, 8], [4, 10], [4, 12],
+    [5, 7],
+    [6, 0], [6, 1], [6, 2], [6, 4], [6, 6], [6, 8], [6, 10], [6, 11], [6, 12],
+    [7, 5],
+    [8, 0], [8, 2], [8, 4], [8, 5], [8, 6], [8, 8], [8, 10], [8, 12],
+    [9, 8], [9, 9],
+    [10, 0], [10, 2], [10, 4], [10, 6], [10, 8], [10, 10], [10, 12],
+    [11, 6],
+    [12, 0], [12, 2], [12, 4], [12, 6], [12, 8], [12, 10], [12, 12]
+  ],
+  "clues": {
+    "ac": {
+      "7": ["Returning colleague has no right to restrict freedom of movement", 6, 4],
+      "8": ["I haven't yet decided about Leslie", "3-3", 1],
+      "9": ["Scanning technique might sound like an uncomfortable procedure", 3, 15],
+      "10": ["Richard had one hard relation beaten up", 9, 7],
+      "11": ["Cook macaroni with no lid - it makes a piping sound", 7, 18],
+      "13": ["Toy boy returns twice, blacks out", "2-2", 3],
+      "15": ["Go back a year to start system of exercise", 4, 14],
+      "17": ["What Wile E. Coyote did when Roadrunner ran away? 21 remains", 7, 20],
+      "20": ["Get back at Welsh girl under strain", 9, 23],
+      "21": ["Went out with hand tool", 3, 22],
+      "23": ["Girl put back in drink", 6, 9],
+      "24": ["Tee off, smash it - sweet!", 6, 8]
+    },
+    "dn": {
+      "1": ["Coming about from moralistic statements", 6, 12],
+      "2": ["Mineral mined centrally", 3, 17],
+      "3": ["Financial instruments in shaky position - I'm out", 7, 2],
+      "4": ["Hunter needs a hand to get up", 5, 6],
+      "5": ["Smug boys like this?", "4-4", 24],
+      "6": ["At last, finally, prompt and regular", 6, 16],
+      "12": ["Moving performance of Howards End to go on tour", 8, 10],
+      "14": ["I'm surprised about a joke from a regal state", 7, 11],
+      "16": ["Just a second, that is a garment that stands by itself", 6, 5],
+      "18": ["Raise amendments including foreign travellers", 6, 13],
+      "19": ["Questionable character right on board?", 5, 21],
+      "22": ["A foot behind", 3, 19]
+    }
+  },
+  "correct-answer": 1626366727,
+  "message-squares": []
+}

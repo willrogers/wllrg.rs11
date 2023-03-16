@@ -1,0 +1,58 @@
+{
+    "across-size": 13,
+    "down-size": 13,
+    "black-squares": [
+        [0, 5],
+        [1, 1], [1, 3], [1, 5], [1, 7], [1, 9], [1, 11],
+        [2, 7],
+        [3, 1], [3, 3], [3, 5], [3, 7], [3, 9], [3, 11],
+        [4, 5],
+        [5, 0], [5, 1], [5, 3], [5, 4], [5, 5], [5, 7], [5, 9], [5, 10], [5, 11],
+        [6, 6],
+        [7, 1], [7, 2], [7, 3], [7, 5], [7, 7], [7, 8], [7, 9], [7, 11], [7, 12],
+        [8, 7],
+        [9, 1], [9, 3], [9, 5], [9, 7], [9, 9], [9, 11],
+        [10, 5],
+        [11, 1], [11, 3], [11, 5], [11, 7], [11, 9], [11, 11],
+        [12, 7]
+    ],
+    "clues": {
+        "ac" :
+        {
+            "1": ["Vessel with broken oar? Thanks for that", 5, 2],
+            "4": ["One preparing piece of furniture", 7, 15],
+            "8": ["Deduce no serious fire 🔥", 7, 1],
+            "9": ["Make like Edward and develop intellect?", 5, 3],
+            "10": ["Nothing to change for part of a woman's body", 5, 8],
+            "11": ["Roughen up, rub and shine briefly, polish", 7, 13],
+            "12": ["Bar leaders of Jordan, Oman and Syria from stringed instruments 🎻🎸", 6, 22],
+            "14": ["Terrible prose about horse and frankly obscure Greek magistrates", 6, 20],
+            "17": ["In a dirty manner, swapping head for liberal with fortune", 7, 12],
+            "19": ["Permitted decapitation is abominable", 5, 23],
+            "21": ["Shove knight into space in venue", 5, 14],
+            "22": ["Frustratingly myopic about luck, initially regarding games", 7, 9],
+            "23": ["Fully-developed computer systems start to expire: that's a bug", 7, 17],
+            "24": ["Scorch French monkey 🐒", 5, 4]
+        },
+        "dn":
+        {
+            "1": ["In the morning I try to make a friend", 5, 21],
+            "2": ["Stop that umpire - bad weather", 7, 13],
+            "3": ["A beam of light about right for an impressive display", 5, 3],
+            "4": ["Pop right in: a household pet, a graduate and a footballer called Didier", 6, 6],
+            "5": ["Crudely dye rope: this might make it easier to see", 7, 18],
+            "6": ["ψφ, you say? An alien text 👽?", 5, 16],
+            "7": ["To start with, red-headed youngster tries her moves slowly in musical patterns", 7, 5],
+            "12": ["Dance with endless wine 🍷 is a steadying influence", 7, 9],
+            "13": ["Confusing one right and one down? It's an art form", 7, 10],
+            "15": ["Unpleasant drive for a delivery 🚙", "3,4", 19],
+            "16": ["Way to learn: put short sequence in a chunk of memory", "2,4", 13],
+            "18": ["Remove obstruction from the French vehicle outside", 5, 24],
+            "19": ["Very large hole found in baby's sock", 5, 7],
+            "20": ["Ill-gotten gains from cruel disruption", 5, 11]
+        }
+    },
+    "correct-answer": 975657021,
+    "message-squares": [[0,1], [2, 1], [4, 1], [6, 1], [8, 1], [10, 1], [12, 1],
+        [12, 11], [10, 11], [8, 11], [6, 11], [4, 11], [2, 11], [0, 11]]
+}

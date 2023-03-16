@@ -1,0 +1,18 @@
+{
+    "across-size": 3,
+    "down-size": 3,
+    "black-squares": [
+        [1, 1]
+    ],
+    "clues": {
+        "ac" : {
+            "1": ["Best toy", 3],
+            "3": ["Silence joke", 3]
+        },
+        "dn" : {
+            "1": ["Name game", 3],
+            "2": ["Attach stake", 3]
+        }
+    },
+    "correct-answer": 33020582
+}

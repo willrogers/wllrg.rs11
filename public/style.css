@@ -1,0 +1,315 @@
+html {
+  height: 100%;
+  font-family: "Mukta Mahee", sans-serif;
+  background-color: white;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  font-size: 40px;
+}
+
+p {
+  margin: 0;
+  padding: 5px;
+  color: black;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: blue;
+}
+
+#main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#header {
+  width: 100%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  /* Keep header on top. */
+  z-index: 1;
+}
+
+#header a {
+  text-decoration: none;
+}
+
+#menu {
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
+}
+
+#menu-header {
+  display: none;
+}
+
+ul.nav-items {
+  list-style-type: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ul.nav-items a img {
+  display: block;
+}
+
+li.header-nav-item {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+}
+
+.header-nav-github {
+  width: 25px;
+  height: 25px;
+}
+
+.header-nav-twitter {
+  width: 42px;
+  height: 42px;
+}
+
+#logo {
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+}
+
+#name-logo {
+  /* Push up against the monkey */
+  margin-left: -18px;
+}
+
+#monkey {
+  height: 70px;
+}
+
+#monkey img {
+  height: 70px;
+  padding-top: 15px;
+}
+
+#content {
+  background-color: rgba(255, 255, 255, 0);
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-date {
+  color: darkgray;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+#toggle-label {
+  display: none;
+}
+
+.blog-img {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.blog-img-small {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.blog-img-large {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.blog-img-caption {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Jekyll gives blog code blocks this class */
+pre.highlight {
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid lightgray;
+}
+
+/* Flashcards page. */
+#card {
+  font-family: "Quicksand", sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#cardtext {
+  font-size: 20vw;
+  min-height: 25vw;
+  margin: 0 auto;
+}
+
+#cardinput {
+  margin: 10px auto;
+}
+
+#colourchooser {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto;
+  cursor: default;
+}
+
+#colourchooser label,
+input {
+  cursor: default;
+}
+
+/* Clock page */
+#clock {
+  max-width: 500px;
+}
+
+/* Less wide than the default width of the content */
+@media (max-width: 800px) {
+  #content {
+    width: 90%;
+  }
+
+  #menu {
+    width: 90%;
+    height: 80px;
+  }
+
+  #logo {
+    font-size: 2em;
+  }
+}
+
+/* Probably a phone or tablet. Use the hamburger menu. */
+@media (max-width: 650px) {
+  #header {
+    position: fixed;
+    background-color: white;
+  }
+
+  #main {
+    /* This should match the header height */
+    padding-top: 80px;
+  }
+  nav {
+    transform: translateY(0);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    transition: all 0.5s;
+    background: white;
+    padding: 0 0 0 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* Extend menu for cases where screen can lengthen unexpectedly. */
+    height: 120%;
+    width: 150px;
+    text-align: center;
+    overflow: scroll;
+    /* Make sure it's on top */
+    z-index: 1000;
+  }
+
+  #sidebar-monkey {
+    display: block;
+    max-width: 30%;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  #menu-header {
+    padding-right: 40px;
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  #menu-header a {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2em;
+    line-height: 3.1;
+  }
+
+  ul.nav-items {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  li.header-nav-item {
+    height: 40px;
+    width: 100%;
+    padding: 0;
+  }
+
+  li.header-nav-item a {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    /* Overkill: flexbox for every list item? This is to centre the
+       image inside the a tag. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #toggle-label {
+    display: block;
+    background: url(https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+  }
+
+  .blog-img {
+    width: 100%;
+  }
+
+  .blog-img-small {
+    width: 100%;
+  }
+
+  .blog-img-large {
+    width: 100%;
+  }
+
+  input[type="checkbox"]:checked + nav {
+    transform: translateX(100%);
+    transition: all 0.3s;
+  }
+}

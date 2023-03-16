@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Will Rogers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, user-scalable=no">
+  <!-- Black colour theme on Android. -->
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico?">
+  <link type="text/css" rel="stylesheet" href="/public/style.css" />
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@wrgrs" />
+  <meta name="twitter:title" content="Will Rogers" />
+  
+  <meta name="twitter:description" content="A personal site" />
+  
+  
+  <meta name="twitter:image" content="/favicon-96x96.png" />
+  
+  
+  <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee%7CRaleway%7CPoppins%7CQuicksand:wght@500"
+    rel="stylesheet">
+  
+</head>
+
+<body id=background>
+  <div id="wrapper">
+    <div id="header">
+      <div id="menu">
+        <div id="logo">
+          <div id="monkey">
+            <img src="/static/monkey.png" alt="monkey">
+          </div>
+          <a id=name-logo href="/index.html">Will Rogers</a>
+        </div>
+        <label id="toggle-label"></label>
+        <input type="checkbox" id="toggle-menu" name="toggle-label" checked>
+        <nav>
+          <div id="menu-header">
+            <a href="/index.html">WR</a>
+            <img id="sidebar-monkey" src="/static/monkey.png" alt="monkey">
+          </div>
+          <ul class="nav-items">
+            <li class="header-nav-item"><a href="/index">Blog</a></li>
+            <li class="header-nav-item"><a href="/about">About</a></li>
+            <li class="header-nav-item"><a href="/links">Links</a></li>
+            <li class="header-nav-item"><a href="/xwds">Crosswords</a></li>
+            <li class="header-nav-item">
+              <a href="https://github.com/willrogers">
+                <img class="header-nav-github" src="/static/GitHub-Mark-64px.png" alt="github">
+                </img>
+              </a>
+            </li>
+            <li class="header-nav-item">
+              <a href="https://twitter.com/wrgrs">
+                <img class="header-nav-twitter" src="/static/Twitter_Logo_Blue.png" alt="github">
+                </img>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="main">
+      <div id="content">
+        
+<div id="post">
+  <h1>The Trump Bot</h1>
+<p>Earlier this year, I found myself checking Trump's approval rating several times a week. I realised that if someone had made a Twitter account that posted updates, then I could turn on push notifications and be alerted when things changed.</p>
+<p>It turned out to be true: <a href="https://twitter.com/potusapproval">@potusapproval</a> does just that. I turned on these notifications. For the record, his approval so far is about 35% and decreasing at about 1% per month.</p>
+<p>Not long later, I found out that betting odds were suggesting that Trump may not make it to the end of his four year term, and that the chances of this happening were as low as 50%. This gave me something else to check, and I couldn't find a bot for this one.</p>
+<h2>Betfair Exchange</h2>
+<p>I like watching betting markets for a fairly neutral view of what is likely to happen, especially when there is a wide range of opinions in the media. You can figure out the effective probability of something happening from betting odds, but there's a slight catch - since the bookie always takes a cut, the odds are slightly changed. If you sum the probabilities of each event happening, you will get to slightly less than one.</p>
+<p>Betfair Exchange is a little different: it's a platform allowing people to bet against each other. They claim that this leads to the best odds, and that's true, in a way, but only because they're making money in a different way. If you win, they take a cut from the winnings afterwards, typically 5%. Anyway, since people are betting both ways on the same thing it's possible to take the average of the two sets of odds and get an unbiased estimate for the likelihood of something happening.</p>
+<h2>How it works</h2>
+<p>I previously wrote a simple bot to post the opening times for the Oxford University Parks. It worked by using BeautifulSoup to scrape the relevant information from a webpage, then Tweepy to post the times once a week. This wasn't too hard to do once the authentication was set up.</p>
+<p>I refactored this slightly to add room for a second bot, this time tweeting about Trump. Here, though, it got a little bit more complicated. Since Betfair uses a dynamic webpage updated by javascript, you can't just download the HTML and parse it to find the information you want. The static HTML doesn't contain what you need.</p>
+<p>Fortunately, people have had this problem before. Selenium is a project that allows you to harness a real web browser from your application. You can get it to launch your local Firefox, load the page, extract the data, and close it again. In the case that you don't have a desktop open (you really want to run this on a server), there's a project called PhantomJS that makes a headless version of Chrome you can use.</p>
+<h2>Deployment</h2>
+<p>You might have a virtual private server you can use, but in practice we've all got a Raspberry Pi lying around that could use a project. I wrote a shell script to set up virtualenv and add a cron job to run it every hour.</p>
+<p>You can find everything at <a href="https://github.com/willrogers/tbot">Github</a>, and the bot is on Twitter <a href="https://twitter.com/trumpdumpodds">here</a>.</p>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+  <script src="/js/menu.js">
+  </script>
+</body>
+
+</html>

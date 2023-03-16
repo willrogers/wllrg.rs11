@@ -1,0 +1,59 @@
+{
+    "across-size": 13,
+    "down-size": 13,
+    "black-squares": [
+        [0, 0], [0, 2], [0, 4], [0, 6], [0, 8], [0, 10], [0, 12],
+        [1, 6],
+        [2, 0], [2, 2], [2, 4], [2, 6], [2, 8], [2, 10], [2, 12],
+        [3, 8],
+        [4, 0], [4, 2], [4, 4], [4, 6], [4, 8], [4, 9], [4, 10], [4, 12],
+        [5, 6],
+        [6, 0], [6, 1], [6, 2], [6, 4], [6, 5], [6, 6], [6, 7], [6, 8], [6, 10], [6, 11], [6, 12],
+        [7, 6],
+        [8, 0], [8, 2], [8, 3], [8, 4], [8, 6], [8, 8], [8, 10], [8, 12],
+        [9, 4],
+        [10, 0], [10, 2], [10, 4], [10, 6], [10, 8], [10, 10], [10, 12],
+        [11, 6],
+        [12, 0], [12, 2], [12, 4], [12, 6], [12, 8], [12, 10], [12, 12]
+    ],
+    "clues": {
+        "ac" :
+        {
+            "7": ["Bother - Southern Shale collapses", 6, 12],
+            "8": ["Country loses first lady", 6, 9],
+            "9": ["Reviewing material and making changes", 8, 19],
+            "10": ["Brief time on satellite", 4, 3],
+            "11": ["Stones bruise badly", 6, 15],
+            "12": ["Comment on money no longer valid", 6, 7],
+            "14": ["Rodney's broken down over there", 6, 16],
+            "17": ["Clouds with funny traits", 6, 4],
+            "19": ["Annoy rabbit, trimming its tail", 4, 21],
+            "21": ["What Mario sometimes takes? Be quiet!", "4,4", 23],
+            "22": ["Brief swim, not quite yet? Concentrate!", 6, 6],
+            "23": ["Computers cut woman from particular type of script", 6, 11]
+        },
+        "dn":
+        {
+            "1": ["Entrance with Australian confection", 6, 13],
+            "3": ["Charges for drug stashed in jeans", 6, 14],
+            "4": ["Wonder about depressing experience", 6, 8],
+            "6": ["Set up our high standard", 6, 17],
+            "2": ["Became inflexible boss if I edged round this", 8, 5],
+            "5": ["Solid company", 4, 2],
+            "13": ["Average scientists contained in large circle", 8, 10],
+            "15": ["Source of old machinery - new one first", 6, 22],
+            "16": ["Tear into second half of race and make waves", 6, 20],
+            "17": ["Sibling born in autumn with bad infection?", 6, 1],
+            "18": ["Connection about private urbanite", 6, 24],
+            "20": ["Purloined from buffet, artisan cheese", 4, 18]
+        }
+    },
+    "correct-answer": -1664136858,
+    "message-squares": [
+        [1, 0], [3, 0], [5, 0], [7, 0], [9, 0], [11, 0],
+        [12, 1], [12, 3], [12, 5], [12, 7], [12, 9], [12, 11],
+        [11, 12], [9, 12], [7, 12], [5, 12], [3, 12], [1, 12],
+        [0, 11], [0, 9], [0, 7], [0, 5], [0, 3], [0, 1]
+    ]
+}
+

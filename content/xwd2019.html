@@ -1,0 +1,24 @@
+---
+layout: main
+extra_js:
+ - /js/xwd.js
+ - /js/xwd-advent.js
+ - /js/cookies.min.js
+extra_css:
+ - /css/xwd.css
+---
+<h1 id="title">The Advent Crossword 2019</h1>
+<div id="crossword-content">
+  <div id="preamble"><p>Find all the members of a Christmas-related group in the completed grid.</p></div>
+  <div style="height:0;width:0;overflow:hidden"><input type="password" onfocus="this.removeAttribute('readonly');" id="hidden-input" autocomplete="off" readonly /></div>
+  <div id="selected-clue"><span id="selected-clue-text">No clue selected</span></div>
+  <div id="crossword-left-part">
+    <canvas id="xwd" key="2019"></canvas>
+    <a id="check-button" class="xwd-button">Check solution</a>
+  </div>
+  <div id="all-clues"></div>
+</div>
+<script>
+window.onload = function(){ adventXwd.main(); };
+</script>
+

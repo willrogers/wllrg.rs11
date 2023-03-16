@@ -1,0 +1,22 @@
+---
+layout: main
+permalink: index.html
+---
+<h1>Blog</h1>
+<div>
+  <p>
+    I write these posts more to focus my thoughts than in the expectation that others will read them, but please feel
+    free to discuss or give me feedback on <a href="https://twitter.com/wrgrs">Twitter</a>.
+  </p>
+</div>
+<div>
+  <ul>
+    {% for post in collections.post %}
+    <li>
+      <span class="post-date">{{ page.date | postDate }} </span><a class="post-link" href="{{ post.url }}">{{
+        post.data.title
+        }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

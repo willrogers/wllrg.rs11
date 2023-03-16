@@ -1,0 +1,68 @@
+---
+layout: main
+---
+<h1>Jojo flashcards</h1>
+<div id="card">
+  <p id="cardtext">
+    cat
+  </p>
+  <input id="cardinput" value="cat"></input>
+  <div id="colourchooser">
+    <div>
+      <input type="radio" id="black" name="colour" value="black" checked>
+      <label for="black">Black</label>
+    </div>
+    <div>
+      <input type="radio" id="red" name="colour" value="red">
+      <label for="red">Red</label>
+    </div>
+    <div>
+      <input type="radio" id="green" name="colour" value="green">
+      <label for="green">Green</label>
+    </div>
+    <div>
+      <input type="radio" id="yellow" name="colour" value="yellow">
+      <label for="yellow">Yellow</label>
+    </div>
+    <div>
+      <input type="radio" id="blue" name="colour" value="blue">
+      <label for="blue">Blue</label>
+    </div>
+    <div>
+      <input type="radio" id="orange" name="colour" value="orange">
+      <label for="orange">Orange</label>
+    </div>
+    <div>
+      <input type="radio" id="purple" name="colour" value="purple">
+      <label for="purple">Purple</label>
+    </div>
+    <div>
+      <input type="radio" id="white" name="colour" value="white">
+      <label for="white">White</label>
+    </div>
+  </div>
+</div>
+<script>
+  const cardtext = document.getElementById("cardtext");
+  const cardinput = document.getElementById("cardinput");
+  const chooser = document.getElementById("colourchooser");
+
+  /* Update text whenever input changed. */
+  cardinput.onkeyup = (event) => {
+    cardtext.innerText = event.target.value;
+  };
+  /* Select text to make it easier to change. */
+  cardinput.onkeydown = (event) => {
+    if (event.keyCode === 13) {
+      cardinput.select();
+    }
+  }
+  cardinput.onclick = () => {
+    cardinput.select();
+  };
+  /* Change colour whenever radio buttons clicked. */
+  chooser.onclick = () => {
+    const colour = document.querySelector('input[name="colour"]:checked').value
+    cardtext.style.color = colour;
+  }
+</script>

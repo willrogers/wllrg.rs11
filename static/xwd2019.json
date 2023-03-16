@@ -1,0 +1,51 @@
+{
+  "across-size": 13,
+  "down-size": 13,
+  "black-squares": [
+    [0, 0], [0, 2], [0, 4], [0, 6], [0, 7], [0, 8], [0, 10], [0, 12],
+    [1, 0], [1, 7], [1, 12],
+    [2, 0], [2, 2], [2, 4], [2, 6], [2, 8], [2, 10], [2, 12],
+    [3, 0],
+    [4, 0], [4, 2], [4, 4], [4, 6], [4, 8], [4, 10], [4, 11],
+    [5, 5],
+    [6, 0], [6, 2], [6, 3], [6, 4], [6, 6], [6, 8], [6, 9], [6, 10], [6, 12],
+    [7, 7],
+    [8, 1], [8, 2], [8, 4], [8, 6], [8, 8], [8, 10], [8, 12],
+    [9, 12],
+    [10, 0], [10, 2], [10, 4], [10, 6], [10, 8], [10, 10], [10, 12],
+    [11, 0], [11, 5], [11, 12],
+    [12, 0], [12, 2], [12, 4], [12, 5], [12, 6], [12, 8], [12, 10], [12, 12]
+  ],
+  "clues": {
+    "ac": {
+      "2": ["Nut loaf", 3, 4],
+      "4": ["What you might pull while gardening - oops", 8, 18],
+      "7": ["Kid in water feature", 4, 1],
+      "9": ["Political party with energy after propaganda caper", 6, 15],
+      "10": ["Enjoy eating some of squirrel I shot", 6, 3],
+      "11": ["Company came across trailblazer?", 5, 8],
+      "12": ["Words said quietly for the record", 5, 13],
+      "15": ["Huge effort starts to bring latecomer into the zone", 5, 10],
+      "16": ["Access guard decapitated", 6, 20],
+      "19": ["Swot up about a political party", "4,2", 12],
+      "20": ["Disrupts universal payouts with upfront cut", 6, 23],
+      "21": ["Cut short poet in residence", 4, 14],
+      "22": ["What B is to 12 - the opposite?", 8, 9],
+      "23": ["Catch sight of snooper", 3, 17]
+    },
+    "dn": {
+      "1": ["Fight over unknown name of bad-tempered woman", 5, 21],
+      "2": ["Tree that sounds Mediterranean", 7, 7],
+      "3": ["Unsettled Danes cry warning before entertainment", 12, 24],
+      "5": ["Forgive average teacher", 6, 6],
+      "6": ["Refuelling supervisors for trainees", "6,6", 2],
+      "8": ["Run a bit", 4, 16],
+      "13": ["Shock sets back European financial year", 7, 22],
+      "14": ["Worn down hero dedicated at heart", 6, 11],
+      "17": ["Emperor from north east gets only half of capital", 4, 5],
+      "18": ["Love in the air when number dropped into heads of Couple-Up Dating", 5, 19]
+    }
+  },
+  "correct-answer": -163462929,
+  "message-squares": []
+}
