@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/wllrg.rs11/",
     dir: {
       input: "content",         // default: "."
       includes: "../_includes",  // default: "_includes"
