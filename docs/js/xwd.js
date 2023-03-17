@@ -803,7 +803,7 @@ xwd.main = function() {
     COOKIE_KEY = `grid-state-${KEY}`;
     var style = getComputedStyle(document.body);
     HIGHLIGHT = style.getPropertyValue('--highlight-color');
-    var dataFile = `/static/xwd${KEY}.json`;
+    var dataFile = `{{ '/static/xwd${KEY}.json' | url}}`;
     loadAll(dataFile);
 }
 
