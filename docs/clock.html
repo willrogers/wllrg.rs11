@@ -71,10 +71,13 @@
       <div id="content">
         
 <h1 id="title">A clock for Joseph</h1>
-<div id="clock">
-  <svg id="clock-svg" viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="52" cy="52" r="50" fill="none" stroke-width="2" stroke="black" />
-  </svg>
+<div id="clocks">
+  <div id="clock">
+    <svg id="clock-svg" viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="52" cy="52" r="50" fill="none" stroke-width="2" stroke="black" />
+    </svg>
+  </div>
+  <div id="digital-clock" class="hidden"></div>
 </div>
 <script>
   const dimension = 104;
@@ -84,6 +87,7 @@
   // Temporarily disable second hand.
   const drawSecondHand = false;
   const clockSvg = document.getElementById("clock-svg");
+  const digitalClockDiv = document.getElementById("digital-clock");
   function drawNumbers(clockSvg) {
     for (let i = 0; i < 12; i++) {
       const angle = (30 * i * Math.PI) / 180;
@@ -94,7 +98,6 @@
         "http://www.w3.org/2000/svg",
         "text"
       );
-      console.log();
       element.setAttribute("x", s - textSize / 2);
       element.setAttribute("y", c + textSize / 2);
       element.setAttribute("width", textSize);
@@ -151,9 +154,19 @@
     centre.setAttribute("fill", "black");
     clockSvg.appendChild(centre);
   }
+  function drawDigitalClock(digitalClockDiv) {
+    const now = new Date();
+    const hour = now.getHours() % 12;
+    const ampm = now.getHours() < 12 ? "AM" : "PM";
+    const minute = now.getMinutes();
+    digitalClockDiv.textContent = `${hour}.${minute} ${ampm}`;
+  }
   drawNumbers(clockSvg);
   drawHands(clockSvg, drawSecondHand);
+  drawDigitalClock(digitalClockDiv);
   setInterval(() => drawHands(clockSvg, drawSecondHand), 1000);
+  setInterval(() => drawDigitalClock(digitalClockDiv), 1000);
+  clockSvg.addEventListener("click", () => digitalClockDiv.classList.toggle("hidden"));
 </script>
       </div>
     </div>

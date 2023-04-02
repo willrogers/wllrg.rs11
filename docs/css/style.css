@@ -197,8 +197,28 @@ input {
 }
 
 /* Clock page */
-#clock {
+#clocks {
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clock {
+  width: 100%;
+}
+
+#digital-clock {
+  font-size: 50px;
+  padding: 0px 20px 0px 20px;
+  margin: 10px;
+  max-width: 60%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Less wide than the default width of the content */
@@ -228,6 +248,7 @@ input {
     /* This should match the header height */
     padding-top: 80px;
   }
+
   nav {
     transform: translateY(0);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
@@ -308,7 +329,7 @@ input {
     width: 100%;
   }
 
-  input[type="checkbox"]:checked + nav {
+  input[type="checkbox"]:checked+nav {
     transform: translateX(100%);
     transition: all 0.3s;
   }
