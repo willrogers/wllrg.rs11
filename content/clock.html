@@ -93,7 +93,8 @@ extra_js:
     const now = new Date();
     const hour = now.getHours() % 12;
     const ampm = now.getHours() < 12 ? "AM" : "PM";
-    const minute = now.getMinutes();
+    const minute = now.getMinutes().toString().padStart(2, "0");
+
     digitalClockDiv.textContent = `${hour}.${minute} ${ampm}`;
   }
   drawNumbers(clockSvg);
