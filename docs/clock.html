@@ -74,7 +74,7 @@
 <div id="clocks">
   <div id="clock">
     <svg id="clock-svg" viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="52" cy="52" r="50" fill="none" stroke-width="2" stroke="black" />
+      <circle cx="52" cy="52" r="50" fill="none" stroke-width="2" stroke="purple" />
     </svg>
   </div>
   <div id="digital-clock" class="hidden"></div>
@@ -138,8 +138,8 @@
       clockSvg.appendChild(hand);
     }
 
-    drawHand(clockSvg, "hourhand", hourLength, hours * 30, "black", 2);
-    drawHand(clockSvg, "minutehand", minuteLength, minutes * 6, "gray", 1.5);
+    drawHand(clockSvg, "hourhand", hourLength, hours * 30, "lightgreen", 2);
+    drawHand(clockSvg, "minutehand", minuteLength, minutes * 6, "orange", 1.5);
     if (drawSecondHand) {
       drawHand(clockSvg, "secondhand", secondLength, seconds * 6, "red", 1);
     }
